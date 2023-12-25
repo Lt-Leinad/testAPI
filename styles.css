@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --fs-XL: 42px;
+    --fs-L: 26px;
+    --fs-M: 21px;
+    --fs-S: 16px;
+    --darkColor: #070707;
+    --lightColor: #E3EBFF;
+    --correct: #109b5f;
+    --wrong: #d81546;
+    --accentColor: #4392F1;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+.question-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 375px;
+    padding: 20px;
+    transition: 250ms;
+    background-color: var(--lightColor);
+    border: none;
+    background-color: var(--accentColor);
+    border-radius: 10px;
+    border: 1px solid var(--accentColor)
+}
+
+.question-container > * {
+    width: 100%;
+    text-align: center;
+}
+
+.points, .time {
+    font-size: var(--fs-L);
+    color: var(--darkColor);
+}
+
+.question {
+    font-size: var(--fs-M);
+    color: var(--darkColor);
+}
+
+.answer-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 60px;
+    grid-gap: 20px;
+  }
+
+.flag {
+    width: 100%;
+    aspect-ratio: 2/1;
+    font-size: var(--fs-L);
+    display: grid;
+    place-content: center;
+    object-fit: cover;
+    border: 1px solid var(--accentColor);
+}
+
+.answer {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accentColor);
+    width: 100%;
+    font-size: var(--fs-S);
+    transition: 250ms;
+    background-color: var(--lightColor);
+    color: var(--darkColor);
+    padding: 5px;
+}
+
+.answer:active {
+    cursor: pointer;
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+}
+
+.correct, .wrong {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: grid;
+    place-content: center;
+    font-size: var(--fs-XL);
+    color: var(--lightColor);
+}
+
+.correct {
+    background-color: var(--correct);
+}
+
+.wrong {
+    background-color: var(--wrong);
+}
+
+.display-none {
+    display: none;
+}

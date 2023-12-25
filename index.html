@@ -1,24 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta name="color-scheme" content="light dark" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-1370654501447367" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Country Quiz - Flags</title>
   </head>
   <body>
-    <pre style="word-wrap: break-word; white-space: pre-wrap">
-    "{
-        "data": [
-            {
-                "title": "Mr",
-                "firstName": "Daniel",
-                "lastName": "Feddy",
-                "age": "23"
-            }, {
-                "title": "Mrs",
-                "firstName": "Devorah",
-                "lastName": "Gurevich",
-                "age": "22"
-            }
-        ]
-    }"
-    </pre>
+    <audio class="ding" src="/audio/ding.mov"></audio>
+    <audio class="buzzer" src="/audio/buzzer.mov"></audio>
+    <div class="question-container">
+      <h1 class="points"></h1>
+      <h2 class="question">What's the country?</h2>
+      <img class="flag" alt="Country Flag" />
+      <div class="answer-container">
+        <button class="answer answer-a">placeholder</button>
+        <button class="answer answer-b">placeholder</button>
+        <button class="answer answer-c">placeholder</button>
+        <button class="answer answer-d">placeholder</button>
+      </div>
+      <div class="correct display-none">CORRECT</div>
+      <div class="wrong display-none">WRONG</div>
+    </div>
+    <script src="script.js" async></script>
   </body>
 </html>
